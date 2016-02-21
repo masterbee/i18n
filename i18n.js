@@ -123,11 +123,7 @@
                     suffix = match[4];
                     locale = masterConfig.locale;
                     if (!locale) {
-                        locale = masterConfig.locale =
-                            typeof navigator === 'undefined' ? 'root' :
-                            ((navigator.languages && navigator.languages[0]) ||
-                             navigator.language ||
-                             navigator.userLanguage || 'root').toLowerCase();
+											locale = masterConfig.locale = document.documentElement.lang.toLowerCase();
                     }
                     parts = locale.split('-');
                 }
